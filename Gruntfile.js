@@ -2,10 +2,10 @@ module.exports = function(grunt) {
 	'use strict';
 
 	grunt.initConfig({
-		less: {
+		sass: {
 			compile: {
         files: {
-          'assets/css/style.css': ['assets/less/style.less']
+          'assets/css/style.css': ['assets/scss/style.scss']
         }
       }
 		},
@@ -14,8 +14,8 @@ module.exports = function(grunt) {
 		},
 		watch: {
 			css: {
-				files: ['assets/less/*.less'],
-				tasks: ['clean', 'less:compile'],
+				files: ['assets/scss/*.scss'],
+				tasks: ['clean', 'sass:compile'],
 				options: {
 					livereload: true
 				}
@@ -25,9 +25,9 @@ module.exports = function(grunt) {
 
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-clean');
-	grunt.loadNpmTasks('grunt-contrib-less');
+	grunt.loadNpmTasks('grunt-contrib-sass');
 
-	grunt.registerTask('default', ['clean', 'less']);
+	grunt.registerTask('default', ['clean', 'sass']);
 	grunt.registerTask('w', ['watch']);
 
 };
