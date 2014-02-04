@@ -5,7 +5,7 @@ module.exports = function(grunt) {
 		sass: {
 			compile: {
         files: {
-          'assets/css/style.css': ['assets/scss/style.scss']
+          'assets/css/style.css': ['assets/scss/theme.scss']
         }
       }
 		},
@@ -14,7 +14,7 @@ module.exports = function(grunt) {
 		},
 		watch: {
 			css: {
-				files: ['assets/scss/*.scss'],
+				files: ['assets/scss/*.scss', '*.hbs', 'partials/*.hbs'],
 				tasks: ['clean', 'sass:compile'],
 				options: {
 					livereload: true

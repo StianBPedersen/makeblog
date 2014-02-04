@@ -1,11 +1,37 @@
 {{!< default}}
+{{> header }}
+
 
 <div class="l-wrapper-tp">
-	<main>
+	<main class="l-main-tp" role="main">
 		{{#foreach posts}}
-			<article>
-				<p>test</p>
+			<article class="article-tp	theme-margin" role="article">
+				<header class="postheader-tp">
+					<time class="date-tp" datetime="{{date format="YYYY--MM-DD"}}">
+						{{date format="dddd DD MMM YYYY"}}
+					</time>
+					<h1 class="posttitle-tp">
+						<a href="{{{url}}}" rel="bookmark">{{title}}</a>
+					</h1>
+					<div class="postcontent-tp">
+						{{{excerpt}}}
+					</div>
+					{{#if tags}}
+						<div class="posttags-tp">
+							tags: {{ tags separator=" | "}}
+						</div>
+					{{/if}}
+				</header>
 			</article>
 		{{/foreach}}
+
+		{{#if pagination }}
+			<div class="pagination-tp">
+				{{{pagination}}}
+			</div>
+		{{/if}}
 	</main>
 </div>
+
+{{> footer}}
+
