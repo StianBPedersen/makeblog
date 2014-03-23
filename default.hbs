@@ -15,6 +15,15 @@
 	{{! Responsive }}
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+	{{#post}}
+		<meta property="og:title" content="{{title}}"/>
+		<meta property="og:content" content="{{excerpt}}"/>
+		<meta property="og:image" content="{{ @blog.url }}{{ @blog.logo}}" />
+		<meta property="og:type" content="blog" />
+		<meta property="og:site_name" content="{{@blog.title}}"/>
+		<meta property="og:url" content="{{ url absolute="true" }}"/>
+	{{/post}}
+
 	{{ghost_head}}
 </head>
 <body class="{{body_class}}">
