@@ -1,4 +1,3 @@
-Ghost-theme
-===========
+makeblog
+========
 
-Ghost-theme
