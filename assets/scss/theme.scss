@@ -147,6 +147,18 @@ h1 { margin-bottom: 0;}
 	right: -20px;
 }
 
+.back {
+	position:absolute;
+	bottom: -60px;
+	left: 0;
+	transform: rotateX(90deg);
+	text-decoration:none;
+
+	img { float:left;-webkit-transform: rotateZ(-180deg);}
+	a { position:relative;padding: 0 0 0 10px;text-decoration: none;color:#00b6ef;text-shadow: none;}
+	span { top:10px;position:relative;}
+}
+
 @include create-animation-classes;
 @include create-keyframes;
 

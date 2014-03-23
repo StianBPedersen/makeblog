@@ -281,6 +281,25 @@ h1 {
   top: 67px;
   right: -20px; }
 
+.back {
+  position: absolute;
+  bottom: -60px;
+  left: 0;
+  transform: rotateX(90deg);
+  text-decoration: none; }
+  .back img {
+    float: left;
+    -webkit-transform: rotateZ(-180deg); }
+  .back a {
+    position: relative;
+    padding: 0 0 0 10px;
+    text-decoration: none;
+    color: #00b6ef;
+    text-shadow: none; }
+  .back span {
+    top: 10px;
+    position: relative; }
+
 .makenewsmail {
   background: white;
   -webkit-animation: makenewsmail 0.3s ease-in-out 2.5s forwards;

@@ -18,9 +18,16 @@
 			{{#if tags}}
 			<div class="makeblog-posttags" data-tag="{{ tags }}">
 				{{ tags separator=" | "}}
+				<div class="back">
+					<a href="javascript: history.back();">
+						<img src="/assets/images/arrow.png" alt="" /> 
+						<span>Go back</span>
+					</a>
+				</div>
 			</div>
 			{{/if}}
 		</article>
+		
 		{{/post}}
 	</main>
 </div>
