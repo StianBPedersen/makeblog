@@ -1,13 +1,6 @@
-<div class="l-header-tp theme-margin" role="banner">
+<div class="makeblog-l-header" role="banner">
 	{{#if @blog.logo}}
-		<a href="{{@blog.url}}" class="logo-tp"><img src="{{@blog.logo}}" alt="{{@blog.title}}"></a>
+		<a href="{{@blog.url}}" class=""><img src="{{@blog.logo}}" alt="{{@blog.title}}"></a>
+		<a class="makeblog-title" href="{{@blog.url}}">{{@blog.title}}</a>
 	{{/if}}
-
-	<h1 class="blogtitle-tp">
-		<a href="{{@blog.url}}">{{@blog.title}}</a>
-	</h1>
-
-	<p class="blogdescription-tp">
-		<a href="{{@blog.url}}">{{@blog.description}}</a>
-	</p>
 </div>

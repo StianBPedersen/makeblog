@@ -1,12 +1,179 @@
 /***************************************************************************************************************************/
 /********************************************************* THEME ***********************************************************/
 /***************************************************************************************************************************/
-
+@import 'mixin';
 @import 'base';
 @import 'layout';
 
 $primary: #ddd;
 $secondary: #ccc;
 
-body { background: $primary; }
-article { background: $secondary}
+h1 { margin-bottom: 0;}
+
+.makeblog-title { position:absolute;top: 3px;right: 10px;color:$white;margin-top: 10px;padding: 0 10px; }
+
+.makeblog-blogdescription { 
+	padding: 0;
+	margin-top: 5px;
+	color:$black; 
+	font-family: Lato, sans-serif;
+	font-weight: 200;
+}
+
+.makeblog-article {
+	width:100%;
+	max-width: 768px;
+	margin: 0 auto;
+	margin-top: 30px;
+	opacity: 0.95;
+
+	time { 
+		position:absolute;
+		background-image: -webkit-linear-gradient(top, $grey 0%, $white 100%);
+		background-image: -moz-linear-gradient(top, $grey 0%, $white 100%);
+		background-image: -o-linear-gradient(top, $grey 0%, $white 100%);
+		background-image: -ms-linear-gradient(top, $grey 0%, $white 100%);
+		background-image: linear-gradient(to bottom, $grey 0%, $white 100%);
+		right: 0;
+		top: 0;
+		font-weight:300;
+		font-size: 0.9em;
+		margin-top: 0;
+		font-style:italic;
+		padding: 10px;
+		border-radius: 0 4px 0 0;
+		width: 100%;
+		box-sizing: border-box;
+		text-align: right;
+		
+		i {
+			color:$white;
+			font-size: 1em;
+			display:block;
+			padding: 5px 0;
+			text-shadow: 0 1px 0 rgba(0,0,0,.2)
+		}
+		
+		span {
+			width: 100%;
+			position:relative;
+			font-size: 0.8em;
+			color: $white;
+			display: block;
+			border-radius: 0 0 0 4px;
+			padding: 2px 0;
+			margin-top: 3px;
+		}
+	}
+	
+	.makeblog-content { 
+		width: 78%;float:left;background: $white;box-sizing: border-box;border-radius:4px;border: 2px dashed $palegreen;	
+
+		h1 { padding: 20px 0 0 0;font-size: 2em; }
+		.makeblog-postcontent {
+			padding: 0 20px;
+		}
+		
+	}
+	@include clearfix;
+}
+
+.makeblog-posttitle { 
+	margin: 0;
+	font-weight:200; 
+	border-bottom: 1px solid $grey;
+	padding-bottom: 5px;
+	margin-bottom: 10px;
+
+	a {
+		text-decoration: none;
+		color:$black;
+	}
+}
+
+.makeblog-postheader {
+	padding: 25px 20px 5px 20px;
+	position:relative;
+}
+
+.makeblog-postcontent, makeblog-postcontent p { color:$black;margin: 0 0 20px 0;font-size: 0.9em;}
+
+.makeblog-posttags { 
+	width:100%;
+	padding: 10px 10px 10px 20px;
+	text-align:left;
+	background: $grey;
+	color:$white;
+	box-sizing: border-box;
+	border-radius: 0 0 4px 4px;
+	display:block; 
+	font-size: 0.9em;
+	text-shadow: 0 1px rgba(0,0,0,.4);
+	background: $grey;
+}
+
+.makeblog-pagination {
+	width: inherit;
+	text-align:center;
+	margin: 0 auto;
+	margin: 30px 0 50px 0;
+
+	nav.pagination span {
+		font-style:italic;
+		font-size: 0.9em;
+		color: $white;
+	}
+}
+
+.makeblog-l-footer p { color:$white; }
+.makeblog-l-footer p, .l-changelog-footer a { font-size: 0.8em;}
+
+.read-more {
+	position: relative;
+	right: 0;
+	padding-bottom: 5px;
+	display: block;
+	text-align: right;
+	text-decoration: none;
+	font-size: 0.7em;
+	text-transform:uppercase;
+}
+
+.arrow {
+	width: 40px;
+	height: 40px;
+	position: absolute;
+	top: 67px;
+	right: -20px;
+}
+
+@include create-animation-classes;
+@include create-keyframes;
+
+
+/* RESPONSIVE */
+@media screen and (max-width: 768px) {
+	.makeblog-article {
+		width: 90%;
+		time {
+			width:90%;
+			margin: 0 auto;
+			float:none;
+			display:block;
+			border-radius: 4px 4px 0 0;
+			background: none;
+			color:$black;
+
+			span {
+				border-radius: 0 0 0 0;
+			}
+		}
+
+		.makeblog-content {
+			width: 90%;
+			margin: 0 auto;
+			float:none;
+		}
+	}
+	.arrow { display:none; }
+}

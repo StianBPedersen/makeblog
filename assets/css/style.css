@@ -2,13 +2,518 @@
 /********************************************************* THEME ***********************************************************/
 /***************************************************************************************************************************/
 /***************************************************************************************************************************/
+/************************************************ MIXIN, FUNC AND VRS ******************************************************/
+/***************************************************************************************************************************/
+/***************************************************************************************************************************/
 /********************************************************** BASE ***********************************************************/
 /***************************************************************************************************************************/
+html {
+  font-family: Lato, sans-serif;
+  box-sizing: border-box;
+  font-size: 16px; }
+
+body {
+  background: url("/assets/images/background.jpg") top center fixed no-repeat;
+  padding: 0;
+  padding-top: 50px;
+  margin: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 200; }
+
+h1 {
+  text-decoration: none;
+  font-size: 3em; }
+
+article {
+  width: 100%;
+  display: block;
+  position: relative;
+  background: white;
+  border-radius: 4px;
+  opacity: .95; }
+
+a {
+  text-decoration: none;
+  color: #00b6ef;
+  text-decoration: underline; }
+
+p, ul, ul li {
+  color: black;
+  line-height: 140%;
+  font-size: 1em; }
+
+input {
+  width: 100%;
+  border-radius: 4px;
+  border: 1px solid #d7d7d7;
+  padding: 5px 10px;
+  box-sizing: border-box; }
+
+::-moz-selection {
+  color: white;
+  background: #00b6ef; }
+
+::-o-selection {
+  color: white;
+  background: #00b6ef; }
+
+::-ms-selection {
+  color: white;
+  background: #00b6ef; }
+
+::selection {
+  color: white;
+  background: #00b6ef; }
+
+::-webkit-input-placeholder {
+  color: #00b6ef; }
+
+::-moz-input-placeholder {
+  color: #00b6ef; }
+
+::-o-input-placeholder {
+  color: #00b6ef; }
+
+::-ms-input-placeholder {
+  color: #00b6ef; }
+
+::input-placeholder {
+  color: #00b6ef; }
+
+hr {
+  background: transparent;
+  border: 2px dashed #97b0b4; }
+
+img {
+  max-width: 100%;
+  padding: 0;
+  margin: 0; }
+
+blockquote {
+  border-left: 4px solid #00b6ef;
+  padding-left: 10px; }
+
+pre {
+  margin: 1.6em 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  background: #f1f1f1;
+  border: 1px solid #dddbcc;
+  width: 100%;
+  padding: 10px;
+  font-family: Inconsolata,monospace;
+  font-size: 0.9em;
+  white-space: pre;
+  overflow: hidden;
+  border-radius: 3px; }
+
+footer {
+  position: relative;
+  z-index: 1000; }
+
 /***************************************************************************************************************************/
 /******************************************************** LAYOUT ***********************************************************/
 /***************************************************************************************************************************/
-body {
-  background: #dddddd; }
+.makeblog-l-header {
+  background: black;
+  width: 100%;
+  position: fixed;
+  z-index: 500;
+  padding: 5px 0 0 0;
+  position: fixed;
+  top: 0; }
 
-article {
-  background: #cccccc; }
+.makeblog-l-footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  background: #000;
+  color: #fff;
+  padding: 0 10px;
+  padding: 10px 0;
+  display: none; }
+
+h1 {
+  margin-bottom: 0; }
+
+.makeblog-title {
+  position: absolute;
+  top: 3px;
+  right: 10px;
+  color: white;
+  margin-top: 10px;
+  padding: 0 10px; }
+
+.makeblog-blogdescription {
+  padding: 0;
+  margin-top: 5px;
+  color: black;
+  font-family: Lato, sans-serif;
+  font-weight: 200; }
+
+.makeblog-article {
+  width: 100%;
+  max-width: 768px;
+  margin: 0 auto;
+  margin-top: 30px;
+  opacity: 0.95;
+  zoom: 1; }
+  .makeblog-article time {
+    position: absolute;
+    background-image: -webkit-linear-gradient(top, #f1f1f1 0%, white 100%);
+    background-image: -moz-linear-gradient(top, #f1f1f1 0%, white 100%);
+    background-image: -o-linear-gradient(top, #f1f1f1 0%, white 100%);
+    background-image: -ms-linear-gradient(top, #f1f1f1 0%, white 100%);
+    background-image: linear-gradient(to bottom, #f1f1f1 0%, white 100%);
+    right: 0;
+    top: 0;
+    font-weight: 300;
+    font-size: 0.9em;
+    margin-top: 0;
+    font-style: italic;
+    padding: 10px;
+    border-radius: 0 4px 0 0;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: right; }
+    .makeblog-article time i {
+      color: white;
+      font-size: 1em;
+      display: block;
+      padding: 5px 0;
+      text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2); }
+    .makeblog-article time span {
+      width: 100%;
+      position: relative;
+      font-size: 0.8em;
+      color: white;
+      display: block;
+      border-radius: 0 0 0 4px;
+      padding: 2px 0;
+      margin-top: 3px; }
+  .makeblog-article .makeblog-content {
+    width: 78%;
+    float: left;
+    background: white;
+    box-sizing: border-box;
+    border-radius: 4px;
+    border: 2px dashed #97b0b4; }
+    .makeblog-article .makeblog-content h1 {
+      padding: 20px 0 0 0;
+      font-size: 2em; }
+    .makeblog-article .makeblog-content .makeblog-postcontent {
+      padding: 0 20px; }
+  .makeblog-article:before, .makeblog-article:after {
+    content: "\0020";
+    display: block;
+    height: 0;
+    overflow: hidden; }
+  .makeblog-article:after {
+    clear: both; }
+
+.makeblog-posttitle {
+  margin: 0;
+  font-weight: 200;
+  border-bottom: 1px solid #f1f1f1;
+  padding-bottom: 5px;
+  margin-bottom: 10px; }
+  .makeblog-posttitle a {
+    text-decoration: none;
+    color: black; }
+
+.makeblog-postheader {
+  padding: 25px 20px 5px 20px;
+  position: relative; }
+
+.makeblog-postcontent, makeblog-postcontent p {
+  color: black;
+  margin: 0 0 20px 0;
+  font-size: 0.9em; }
+
+.makeblog-posttags {
+  width: 100%;
+  padding: 10px 10px 10px 20px;
+  text-align: left;
+  background: #f1f1f1;
+  color: white;
+  box-sizing: border-box;
+  border-radius: 0 0 4px 4px;
+  display: block;
+  font-size: 0.9em;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.4);
+  background: #f1f1f1; }
+
+.makeblog-pagination {
+  width: inherit;
+  text-align: center;
+  margin: 0 auto;
+  margin: 30px 0 50px 0; }
+  .makeblog-pagination nav.pagination span {
+    font-style: italic;
+    font-size: 0.9em;
+    color: white; }
+
+.makeblog-l-footer p {
+  color: white; }
+
+.makeblog-l-footer p, .l-changelog-footer a {
+  font-size: 0.8em; }
+
+.read-more {
+  position: relative;
+  right: 0;
+  padding-bottom: 5px;
+  display: block;
+  text-align: right;
+  text-decoration: none;
+  font-size: 0.7em;
+  text-transform: uppercase; }
+
+.arrow {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 67px;
+  right: -20px; }
+
+.makenewsmail {
+  background: white;
+  -webkit-animation: makenewsmail 0.3s ease-in-out 2.5s forwards;
+  -moz-animation: makenewsmail 0.3s ease-in-out 2.5s forwards;
+  -o-animation: makenewsmail 0.3s ease-in-out 2.5s forwards;
+  -ms-animation: makenewsmail 0.3s ease-in-out 2.5s forwards;
+  animation: makenewsmail 0.3s ease-in-out 2.5s forwards; }
+
+.advent-calendar {
+  background: white;
+  -webkit-animation: advent-calendar 0.3s ease-in-out 2s forwards;
+  -moz-animation: advent-calendar 0.3s ease-in-out 2s forwards;
+  -o-animation: advent-calendar 0.3s ease-in-out 2s forwards;
+  -ms-animation: advent-calendar 0.3s ease-in-out 2s forwards;
+  animation: advent-calendar 0.3s ease-in-out 2s forwards; }
+
+.easter-quiz {
+  background: white;
+  -webkit-animation: easter-quiz 0.3s ease-in-out 1.5s forwards;
+  -moz-animation: easter-quiz 0.3s ease-in-out 1.5s forwards;
+  -o-animation: easter-quiz 0.3s ease-in-out 1.5s forwards;
+  -ms-animation: easter-quiz 0.3s ease-in-out 1.5s forwards;
+  animation: easter-quiz 0.3s ease-in-out 1.5s forwards; }
+
+.makemobile {
+  background: white;
+  -webkit-animation: makemobile 0.3s ease-in-out 1s forwards;
+  -moz-animation: makemobile 0.3s ease-in-out 1s forwards;
+  -o-animation: makemobile 0.3s ease-in-out 1s forwards;
+  -ms-animation: makemobile 0.3s ease-in-out 1s forwards;
+  animation: makemobile 0.3s ease-in-out 1s forwards; }
+
+.makeas {
+  background: white;
+  -webkit-animation: makeas 0.3s ease-in-out 0.5s forwards;
+  -moz-animation: makeas 0.3s ease-in-out 0.5s forwards;
+  -o-animation: makeas 0.3s ease-in-out 0.5s forwards;
+  -ms-animation: makeas 0.3s ease-in-out 0.5s forwards;
+  animation: makeas 0.3s ease-in-out 0.5s forwards; }
+
+@-webkit-keyframes makenewsmail {
+  0% {
+    background: #cccccc; }
+
+  100% {
+    background: #00b6ef; } }
+
+@-moz-keyframes makenewsmail {
+  0% {
+    background: #cccccc; }
+
+  100% {
+    background: #00b6ef; } }
+
+@-o-keyframes makenewsmail {
+  0% {
+    background: #cccccc; }
+
+  100% {
+    background: #00b6ef; } }
+
+@-ms-keyframes makenewsmail {
+  0% {
+    background: #cccccc; }
+
+  100% {
+    background: #00b6ef; } }
+
+@keyframes makenewsmail {
+  0% {
+    background: #cccccc; }
+
+  100% {
+    background: #00b6ef; } }
+
+@-webkit-keyframes advent-calendar {
+  0% {
+    background: #cccccc; }
+
+  100% {
+    background: #c20213; } }
+
+@-moz-keyframes advent-calendar {
+  0% {
+    background: #cccccc; }
+
+  100% {
+    background: #c20213; } }
+
+@-o-keyframes advent-calendar {
+  0% {
+    background: #cccccc; }
+
+  100% {
+    background: #c20213; } }
+
+@-ms-keyframes advent-calendar {
+  0% {
+    background: #cccccc; }
+
+  100% {
+    background: #c20213; } }
+
+@keyframes advent-calendar {
+  0% {
+    background: #cccccc; }
+
+  100% {
+    background: #c20213; } }
+
+@-webkit-keyframes easter-quiz {
+  0% {
+    background: #cccccc; }
+
+  100% {
+    background: #efce00; } }
+
+@-moz-keyframes easter-quiz {
+  0% {
+    background: #cccccc; }
+
+  100% {
+    background: #efce00; } }
+
+@-o-keyframes easter-quiz {
+  0% {
+    background: #cccccc; }
+
+  100% {
+    background: #efce00; } }
+
+@-ms-keyframes easter-quiz {
+  0% {
+    background: #cccccc; }
+
+  100% {
+    background: #efce00; } }
+
+@keyframes easter-quiz {
+  0% {
+    background: #cccccc; }
+
+  100% {
+    background: #efce00; } }
+
+@-webkit-keyframes makemobile {
+  0% {
+    background: #cccccc; }
+
+  100% {
+    background: #67a639; } }
+
+@-moz-keyframes makemobile {
+  0% {
+    background: #cccccc; }
+
+  100% {
+    background: #67a639; } }
+
+@-o-keyframes makemobile {
+  0% {
+    background: #cccccc; }
+
+  100% {
+    background: #67a639; } }
+
+@-ms-keyframes makemobile {
+  0% {
+    background: #cccccc; }
+
+  100% {
+    background: #67a639; } }
+
+@keyframes makemobile {
+  0% {
+    background: #cccccc; }
+
+  100% {
+    background: #67a639; } }
+
+@-webkit-keyframes makeas {
+  0% {
+    background: #cccccc; }
+
+  100% {
+    background: black; } }
+
+@-moz-keyframes makeas {
+  0% {
+    background: #cccccc; }
+
+  100% {
+    background: black; } }
+
+@-o-keyframes makeas {
+  0% {
+    background: #cccccc; }
+
+  100% {
+    background: black; } }
+
+@-ms-keyframes makeas {
+  0% {
+    background: #cccccc; }
+
+  100% {
+    background: black; } }
+
+@keyframes makeas {
+  0% {
+    background: #cccccc; }
+
+  100% {
+    background: black; } }
+
+/* RESPONSIVE */
+@media screen and (max-width: 768px) {
+  .makeblog-article {
+    width: 90%; }
+    .makeblog-article time {
+      width: 90%;
+      margin: 0 auto;
+      float: none;
+      display: block;
+      border-radius: 4px 4px 0 0;
+      background: none;
+      color: black; }
+      .makeblog-article time span {
+        border-radius: 0 0 0 0; }
+    .makeblog-article .makeblog-content {
+      width: 90%;
+      margin: 0 auto;
+      float: none; }
+
+  .arrow {
+    display: none; } }

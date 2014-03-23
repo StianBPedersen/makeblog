@@ -1,3 +1,48 @@
 /***************************************************************************************************************************/
 /********************************************************** BASE ***********************************************************/
 /***************************************************************************************************************************/
+
+html { font-family: Lato, sans-serif;box-sizing: border-box;font-size: 16px; }
+body { background: url('/assets/images/background.jpg') top center fixed no-repeat;padding:0;padding-top: 50px;margin:0; }
+h1, h2, h3, h4, h5, h6 { font-weight: 200;}
+h1 { text-decoration:none;font-size: 3em;}
+article { width:100%;display:block;position:relative;background: $white;border-radius: 4px;opacity: .95; }
+a { text-decoration:none;color:$makecolor;text-decoration: underline; }
+p, ul, ul li { color: $black;line-height: 140%;font-size: 1em; }
+input { width:100%;border-radius: 4px;border: 1px solid #d7d7d7;padding: 5px 10px;box-sizing: border-box;}
+
+
+::-moz-selection { color:$white; background: $makecolor; }
+::-o-selection { color:$white; background: $makecolor; }
+::-ms-selection { color:$white; background: $makecolor; }
+::selection { color: $white;background: $makecolor;}
+
+@include placeholder($makecolor);
+
+hr {
+    background: transparent;
+    border: 2px dashed $palegreen;
+}
+
+img { max-width: 100%;padding: 0;margin: 0; }
+
+blockquote { 
+  border-left: 4px solid $makecolor;
+  padding-left: 10px;
+}
+
+pre {
+  margin: 1.6em 0;
+  @include border-box(border-box);
+  background: $grey;
+  border: 1px solid #dddbcc;
+  width: 100%;
+  padding: 10px;
+  font-family: Inconsolata,monospace;
+  font-size: 0.9em;
+  white-space: pre;
+  overflow: hidden;
+  border-radius: 3px;
+}
+
+footer { position:relative;z-index:1000;}

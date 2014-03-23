@@ -2,31 +2,33 @@
 {{> header }}
 
 
-<div class="l-wrapper-tp">
-	<main class="l-main-tp" role="main">
+<div class="makeblog-l-wrapper">
+	<main class="makeblog-l-main" role="main">
 		{{#foreach posts}}
-			<article class="article-tp	theme-margin" role="article">
-				<header class="postheader-tp">
-					<time class="date-tp" datetime="{{date format="YYYY--MM-DD"}}">
-						{{date format="dddd DD MMM YYYY"}}
-					</time>
-					<h1 class="posttitle-tp">
+			<article class="makeblog-article theme-margin" role="article">
+				<header class="makeblog-postheader">
+					<h1 class="makeblog-posttitle">
 						<a href="{{{url}}}" rel="bookmark">{{title}}</a>
 					</h1>
-					<div class="postcontent-tp">
+					<a class="arrow" href="{{{url}}}"><img src="assets/images/arrow.png" alt="" /></a>
+					<time class="makeblog-date" datetime="{{date format="YYYY--MM-DD"}}">
+						{{date format="dddd DD MMM YYYY"}}
+					</time>
+					<div class="makeblog-postcontent">
 						{{{excerpt}}}
 					</div>
-					{{#if tags}}
-						<div class="posttags-tp">
-							tags: {{ tags separator=" | "}}
-						</div>
-					{{/if}}
+					<a class="read-more" href="{{{url}}}">Les mer &raquo;></a>
 				</header>
+				{{#if tags}}
+				<div class="makeblog-posttags" data-tag="{{ tags }}">
+					{{ tags separator=" | "}}
+				</div>
+				{{/if}}
 			</article>
 		{{/foreach}}
 
 		{{#if pagination }}
-			<div class="pagination-tp">
+			<div class="makeblog-pagination">
 				{{{pagination}}}
 			</div>
 		{{/if}}
