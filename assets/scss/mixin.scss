@@ -1,0 +1,86 @@
+/***************************************************************************************************************************/
+/************************************************ MIXIN, FUNC AND VRS ******************************************************/
+/***************************************************************************************************************************/
+
+$background: #dce6e8;
+$makecolor: #00b6ef;
+$secondary: #ccc;
+$white: #fff;
+$black: #000000;
+$palegreen: #97b0b4;
+$grey: #f1f1f1;
+
+$product_colors: $makecolor, #c20213, #efce00, #67a639, #000000;
+$product_name: makenewsmail, advent-calendar, easter-quiz, makemobile, makeas;
+$products: zip($product_name, $product_colors);
+
+@mixin clearfix {
+  zoom:1;
+  &:before, &:after {
+    content: "\0020"; 
+    display: block; 
+    height: 0; 
+    overflow: hidden; 
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+@mixin border-box($type) {
+  -webkit-box-sizing: $type;
+  -moz-box-sizing: $type;
+  -o-box-sizing: $type;
+  -ms-box-sizing: $type;
+  box-sizing: $type;
+}
+
+@mixin placeholder($color) {
+  ::-webkit-input-placeholder { color: $color };
+  ::-moz-input-placeholder { color: $color };
+  ::-o-input-placeholder { color: $color };
+  ::-ms-input-placeholder { color: $color };
+  ::input-placeholder { color: $color };
+}
+
+@function increaseIndex($products, $product) {
+  @return 3 - index($products, $product) / 2 + s;
+}
+
+@mixin create-animation-classes {
+  @each $product in $products {
+    .#{nth($product,1)} {
+      background: $white;
+      -webkit-animation: nth($product,1) 0.3s ease-in-out increaseIndex($products, $product) forwards;
+      -moz-animation: nth($product,1) 0.3s ease-in-out increaseIndex($products, $product) forwards;
+      -o-animation: nth($product,1) 0.3s ease-in-out increaseIndex($products, $product) forwards;
+      -ms-animation: nth($product,1) 0.3s ease-in-out increaseIndex($products, $product) forwards;
+      animation: nth($product,1) 0.3s ease-in-out increaseIndex($products, $product) forwards;
+    }
+  }
+} 
+
+@mixin create-keyframes {
+  @each $product in $products {
+    @-webkit-keyframes #{nth($product,1)} {
+      0% { background: $secondary; }
+      100% { background: #{nth($product,2)}; }
+    }
+    @-moz-keyframes #{nth($product,1)} {
+      0% { background: $secondary; }
+      100% { background: nth($product,2); }
+    }
+    @-o-keyframes #{nth($product,1)} {
+      0% { background: $secondary; }
+      100% { background: #{nth($product,2)}; }
+    }
+    @-ms-keyframes #{nth($product,1)} {
+      0% { background: $secondary; }
+      100% { background: #{nth($product,2)}; }
+    }
+    @keyframes #{nth($product,1)} {
+      0% { background: $secondary; }
+      100% { background: #{nth($product,2)}; }
+    }
+  }
+}
